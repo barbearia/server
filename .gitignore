@@ -58,3 +58,5 @@ typings/
 .env
 
 .idea
+client_id.json
+keys.js
