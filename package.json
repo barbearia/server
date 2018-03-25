@@ -4,7 +4,8 @@
   "description": "Aplicação back-end do aplicativo de barbearia",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/barbearia/server#readme",
   "dependencies": {
     "express": "^4.16.2",
+    "nodemon": "^1.17.2",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0"
   },
