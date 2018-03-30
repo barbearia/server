@@ -61,3 +61,4 @@ typings/
 client_id.json
 dev.js
 package-lock.json
+yarn.lock
