@@ -5,6 +5,22 @@ const mongoose = require('mongoose');
 
 const User = mongoose.model('users');
 
+/**
+ * Esse id é o do registro criado na coleção do mongoDB e não o googleId.
+ *
+ * Não é recomendado usar o googleId aqui por conta da possibilidade
+ * de utilização de outros provedores de autenticação OAuth.
+ */
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(
+    user => done(null, user)
+  );
+});
+
 passport.use(new GoogleStrategy(
   {
     clientID: keys.googleClientID,
