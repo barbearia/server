@@ -59,4 +59,4 @@ typings/
 
 .idea
 client_id.json
-keys.js
+dev.js
