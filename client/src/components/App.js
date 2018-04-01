@@ -4,7 +4,7 @@ import Cabecalho from './Cabecalho'
 
 const Clientes = () => <h2>Lista de Clientes</h2>;
 const Cliente = () => <h2>Novo Cliente</h2>;
-const Home = () => <h2>Home</h2>;
+const Home = () => <h2>Página Inicial</h2>;
 
 const App = () => {
   return (
