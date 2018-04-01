@@ -5,7 +5,7 @@ import './Cabecalho.css'
 class Cabecalho extends Component {
   render() {
     return (
-      <nav className="blue darken-4">
+      <nav className="red darken-1">
         <div className="nav-wrapper">
           <a className="left brand-logo">
             <img src={logo} alt="Barbearia Clube do Bolinha"/>

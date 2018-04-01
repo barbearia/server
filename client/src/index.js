@@ -13,6 +13,8 @@ import { Provider } from 'react-redux';
  */
 import { createStore, applyMiddleware } from 'redux';
 
+import reduxThunk from 'redux-thunk';
+
 import App from './components/App';
 import reducers from './reducers'
 
@@ -22,7 +24,7 @@ import reducers from './reducers'
  * O segundo é relacionado ao estado inicial da aplicação
  * e possui maior utilidade quando se utiliza SSR.
  */
-const store = createStore(reducers, {}, applyMiddleware());
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
 ReactDOM.render(
   <Provider store={store}>
