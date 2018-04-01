@@ -8,12 +8,7 @@ import { FETCH_USER } from './types'
  * ao invés de um objeto, ele automaticamente passa a dispatch function
  * para ser invocada quando houver necessidade.
  */
-export const fetchUser = () => {
-  return function (dispatch) {
-    axios.get('/api/usuario').then(res => dispatch({
-      type: FETCH_USER,
-      payload: res
-    }));
-  }
-
+export const fetchUser = () => async dispatch => {
+  const res = await axios.get('/api/usuario');
+  dispatch({type: FETCH_USER, payload: res});
 }
