@@ -12,6 +12,7 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 
 import App from './components/App';
+import reducers from './reducers'
 
 /**
  * O primeiro argumento é uma lista de reducers.
@@ -19,7 +20,7 @@ import App from './components/App';
  * O segundo é relacionado ao estado inicial da aplicação
  * e possui maior utilidade quando se utiliza SSR.
  */
-const store = createStore(() => [], {}, applyMiddleware());
+const store = createStore(reducers, {}, applyMiddleware());
 
 ReactDOM.render(
   <Provider store={store}>
