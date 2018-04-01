@@ -1,5 +1,5 @@
 import axios from 'axios';
-import FETCH_USER from './types'
+import { FETCH_USER } from './types'
 
 /**
  * Action creator utilizado para atualizar o estado mantido pelo redux.
@@ -8,9 +8,9 @@ import FETCH_USER from './types'
  * ao invés de um objeto, ele automaticamente passa a dispatch function
  * para ser invocada quando houver necessidade.
  */
-const fetchUser = () => {
+export const fetchUser = () => {
   return function (dispatch) {
-    axios.get('/api/current_user').then(res => dispatch({
+    axios.get('/api/usuario').then(res => dispatch({
       type: FETCH_USER,
       payload: res
     }));
