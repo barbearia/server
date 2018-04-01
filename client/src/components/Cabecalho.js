@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
+import logo from '../logo.jpg'
+import './Cabecalho.css'
 
 class Cabecalho extends Component {
   render() {
     return (
-      <nav className="cyan">
+      <nav className="blue darken-4">
         <div className="nav-wrapper">
-          <a className="left brand-logo">Clube do Bolinha</a>
+          <a className="left brand-logo">
+            <img src={logo} alt="Barbearia Clube do Bolinha"/>
+          </a>
           <ul className="right">
             <li>
               <a>

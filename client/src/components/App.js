@@ -8,7 +8,7 @@ const Home = () => <h2>Página Inicial</h2>;
 
 const App = () => {
   return (
-    <div>
+    <div className="container">
       <BrowserRouter>
         <div>
           <Cabecalho />
