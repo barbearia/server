@@ -28,21 +28,13 @@ passport.use(new GoogleStrategy(
     callbackURL: '/auth/google/callback',
     proxy: true
   },
-  (acessToken, refreshToken, profile, done) => {
+  async (acessToken, refreshToken, profile, done) => {
+    const usuarioRecuperado = await User.findOne({ googleId: profile.id });
+    if(usuarioRecuperado) {
+      return done(null, usuarioRecuperado);
+    }
 
-    User.findOne({ googleId: profile.id })
-      .then(usuarioRecuperado => {
-        if(usuarioRecuperado) {
-          done(null, usuarioRecuperado);
-        }
-        else {
-          new User({googleId: profile.id})
-            .save()
-            .then(usuarioCadastrado => {
-              done(null, usuarioCadastrado);
-            });
-        }
-      })
-      .catch(erro => console.log(erro));
+    const usuarioCadastrado = new User({googleId: profile.id}).save()
+    done(null, usuarioCadastrado);
   }
 ));
