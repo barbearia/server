@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import logo from '../logo.jpg'
@@ -30,9 +31,9 @@ class Cabecalho extends Component {
     return (
       <nav className="red darken-1">
         <div className="nav-wrapper">
-          <a className="left brand-logo">
+          <Link className="left brand-logo" to={this.props.auth ? '/clientes' : '/'}>
             <img src={logo} alt="Barbearia Clube do Bolinha"/>
-          </a>
+          </Link>
           <ul className="right">
             <li>
               { this.exibirLoginLogout() }
