@@ -6,10 +6,10 @@ import { connect } from 'react-redux';
 import * as actions from '../actions'
 
 import Cabecalho from './Cabecalho';
+import Home from './Home'
 
 const Clientes = () => <h2>Lista de Clientes</h2>;
 const Cliente = () => <h2>Novo Cliente</h2>;
-const Home = () => <h2>Página Inicial</h2>;
 
 class App extends Component {
 
